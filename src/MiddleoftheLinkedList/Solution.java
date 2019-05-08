@@ -1,5 +1,7 @@
 package MiddleoftheLinkedList;
 
+import java.util.Scanner;
+
 class MyListNode{
     int val;
     MyListNode next;
@@ -9,6 +11,7 @@ class MyListNode{
 }
 public class Solution {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
 
     }
 
@@ -18,6 +21,11 @@ public class Solution {
      * @return
      */
     public static MyListNode middleNode(MyListNode head){
-        List
+        MyListNode slow = head, fast = head;
+        while(fast != null && fast.next !=null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
     }
 }

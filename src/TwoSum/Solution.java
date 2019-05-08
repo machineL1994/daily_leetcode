@@ -13,7 +13,7 @@ public class Solution {
             nums[i] = Integer.parseInt(str[i]);
         }
         int target = sc.nextInt();
-        int[] result = twoSum(nums, target);
+        int[] result = twoSum_test2(nums, target);
         for (int r: result
              ) {
             System.out.println(r+"  ");
@@ -38,4 +38,15 @@ public class Solution {
         }
         return result;
     }
+
+    public static int[] twoSum_test2(int[] nums, int target) {
+        Map<Integer, Integer> m = new HashMap();
+        for(int i = 0; i<nums.length; i++){
+            if(m.get(target-nums[i]) != null){//get方法获取键值
+                return new int[]{m.get(target-nums[i]), i};
+            }
+            m.put(nums[i],i);
+        }
+        throw null;
+    }//这个没太懂，最后的返回值是0,0，还有第一次循环时，map里是不是没有东西
 }
